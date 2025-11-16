@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+/* --- Main Section --- */
+.features-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 5%;
+  background-color: #0d0d2b; /* Dark theme */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 5rem;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- Left Column: Accordion --- */
+.features-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.accordion-item {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.accordion-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.accordion-icon {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #e64d00; /* Neon accent */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #e64d00; 
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header:hover .accordion-icon {
+    transform: scale(1.1);
+}
+
+.accordion-content {
+  overflow: hidden;
+}
+
+.accordion-content p {
+  padding-bottom: 1.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  max-width: 90%;
+}
+
+/* --- Right Column: Visual --- */
+.features-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 500px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 230, 172, 0.2);
+}
+
+.feature-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  
+  .features-accordion {
+      order: 2; /* Accordion comes after the video on mobile */
+  }
+
+  .features-visual {
+      order: 1;
+  }
+
+  .accordion-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+    .accordion-title {
+        font-size: 1.5rem;
+    }
+    .accordion-content p {
+        font-size: 1rem;
+    }
+}

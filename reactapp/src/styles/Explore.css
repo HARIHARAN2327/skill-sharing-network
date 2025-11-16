@@ -1,0 +1,286 @@
+/* ========================================
+   Pexels Explore Page (Dark + Orange Accent)
+======================================== */
+
+/* -- THEME VARIABLES -- */
+:root {
+  --primary-color: #ff6a00;
+  --secondary-color: #ff8333;
+  --background-dark: #0b0f14;
+  --background-surface: #101720;
+  --border-color: #1f2a36;
+  --text-light: #e5e7eb;
+  --text-muted: #94a3b8;
+  --gradient-accent: linear-gradient(90deg, #ff6a00 0%, #ff8333 100%);
+  --shadow-glow-orange: 0 8px 25px rgba(255, 106, 0, 0.4);
+  --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --container-width: 1200px;
+}
+
+/* -- GLOBAL WRAPPER & DEFAULTS -- */
+.pexels-wrapper {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---
+   [ THE FIX - PART 1 ]
+   This new container class will center the content INSIDE your sections.
+--- */
+.pexels-container {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* -- UNIVERSAL HEADING & BUTTON -- */
+.pexels-heading {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 3.5rem;
+}
+
+.pexels-btn {
+  display: inline-block;
+  background: var(--gradient-accent);
+  color: var(--text-light);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 106, 0, 0.3);
+}
+
+.pexels-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-orange);
+}
+
+.pexels-btn.small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* ---
+   [ THE FIX - PART 2 ]
+   This rule is updated. It no longer constrains the width,
+   allowing each section to be full-width.
+--- */
+.pexels-all-in-one > * {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+/* Keep the hero full-bleed without any padding */
+.pexels-all-in-one .pexels-hero {
+  padding: 0;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.pexels-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.pexels-hero-video {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+
+
+.pexels-hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.pexels-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.pexels-title span { color: var(--primary-color); }
+
+.pexels-subtitle {
+  color: #1f2a36;
+  font-size: 1.2rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.7;
+}
+
+/* ---------------- SECTIONS (Featured, Benefits, Categories) ---------------- */
+.pexels-featured, .pexels-benefits, .pexels-categories {
+  background-color: var(--background-surface);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pexels-track-grid, .pexels-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.pexels-track-card, .pexels-benefit-card {
+  background: var(--background-dark);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pexels-track-card:hover, .pexels-benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.pexels-track-card h3, .pexels-benefit-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+.pexels-track-card p, .pexels-benefit-card p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ---------------- CATEGORY SECTION ---------------- */
+.pexels-control-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  background: var(--background-dark);
+  padding: 1rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-dark);
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pexels-sort-group, .pexels-pager {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.pexels-sort-group label { font-size: 0.9rem; color: var(--text-muted); }
+.pexels-sort-group select {
+  border: 1px solid var(--border-color);
+  background: var(--background-surface);
+  color: var(--text-light);
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+.pexels-sort-order, .pexels-pager button {
+  border: none;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.pexels-sort-order { width: 36px; height: 36px; font-size: 1.2rem; }
+.pexels-pager button { padding: 8px 14px; }
+.pexels-pager button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.pexels-category-scroll {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.pexels-category-chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 50px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  background: var(--background-dark);
+  box-shadow: var(--shadow-dark);
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+.pexels-category-chip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px -5px currentColor;
+}
+
+/* ---------------- COMMUNITY & CTA SECTION ---------------- */
+.pexels-community-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  background: var(--background-surface);
+}
+.pexels-community-text, .pexels-cta {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: center;
+}
+.pexels-community-text h2, .pexels-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.pexels-community-text p, .pexels-cta p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.pexels-community-cta img {
+  width: 400px;
+  max-width: 100%;
+  border-radius: 20px;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* ---------------- ANIMATIONS & RESPONSIVE ---------------- */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+@media (max-width: 992px) {
+  .pexels-community-cta {
+    justify-content: center;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .pexels-title { font-size: 2.8rem; }
+  .pexels-heading, .pexels-community-text h2, .pexels-cta h2 { font-size: 2.2rem; }
+  .pexels-all-in-one > * { padding: 4rem 1rem; }
+  .pexels-container { padding-left: 1rem; padding-right: 1rem; }
+}

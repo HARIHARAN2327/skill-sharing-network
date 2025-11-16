@@ -1,0 +1,270 @@
+/* ========================================
+   Modern SkillList Styles
+======================================== */
+
+:root {
+    --primary-color: #ff4d4d;
+    --primary-hover-color: #e63939;
+    --background-color: #ffffff;
+    --card-bg-color: rgba(255, 255, 255, 0.95);
+    --border-color: #e0e0e0;
+    --text-color: #2c3e50;
+    --secondary-text-color: #7f8c8d;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #27ae60;
+    --danger-color: #c0392b;
+    --info-color: #2980b9;
+    --warning-color: #f39c12;
+    --border-radius: 12px;
+  }
+  
+  /* --- Background Video --- */
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+  }
+  
+  .video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+  
+  /* --- Main Page & Filters --- */
+  .skill-list-page {
+    padding: 40px 5%;
+  }
+  
+  .filter-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-controls input {
+    min-width: 280px;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-controls input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .filter-controls input:focus {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 77, 77, 0.3);
+  }
+  
+  .filter-controls button {
+    padding: 12px 25px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .filter-controls button:hover {
+    background-color: var(--primary-hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .filter-controls button.reset-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .filter-controls button.reset-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  /* --- Skill Card Grid --- */
+  .skill-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+  }
+  
+  .skill-card {
+    background: var(--card-bg-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    box-shadow: 0 8px 32px 0 var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Card Content */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  
+  .card-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: var(--text-color);
+  }
+  
+  .tag {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .tag.beginner { background-color: var(--success-color); }
+  .tag.intermediate { background-color: var(--info-color); }
+  .tag.advanced { background-color: var(--warning-color); }
+  .tag.expert { background-color: var(--danger-color); }
+  
+  .card-category {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+  
+  .card-description {
+    color: var(--secondary-text-color);
+    line-height: 1.6;
+    flex-grow: 1; 
+    margin-bottom: 20px;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: auto;
+  }
+  
+  /* Card Actions */
+  .card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+  }
+  
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: none;
+    background: transparent;
+    color: var(--secondary-text-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .action-btn.edit:hover { background-color: rgba(41, 128, 185, 0.1); color: var(--info-color); }
+  .action-btn.delete:hover { background-color: rgba(192, 57, 43, 0.1); color: var(--danger-color); }
+  .action-btn.save:hover { background-color: rgba(39, 174, 96, 0.1); color: var(--success-color); }
+  .action-btn.cancel:hover { background-color: rgba(127, 140, 141, 0.1); color: var(--secondary-text-color); }
+  
+  /* In-line Editing styles */
+  .skill-card-editing {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .skill-card-editing input,
+  .skill-card-editing textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+  }
+  .skill-card-editing input:focus,
+  .skill-card-editing textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.2);
+  }
+  .skill-card-editing .edit-input-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .skill-card-editing .card-actions {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  
+  /* No Skills Message */
+  .no-skills-message {
+    grid-column: 1 / -1; 
+    text-align: center;
+    padding: 50px;
+    background: var(--card-bg-color);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+  }
+  .no-skills-message h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .skill-card-grid {
+      grid-template-columns: 1fr;
+    }
+    .filter-controls {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }

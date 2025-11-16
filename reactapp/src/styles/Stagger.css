@@ -1,0 +1,41 @@
+.ssss {
+  text-align: center;
+  padding: 5rem 1rem;
+  perspective: 1000px;
+}
+
+.ssss h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ssss h1 span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  background: linear-gradient(to right, #1e3a8a, #3b82f6); /* Dark blue -> lighter blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.5), 
+               0 0 10px rgba(0,0,0,0.4); /* subtle 3D shadow */
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.ssss h1 span:hover {
+  transform: scale(1.05) rotateX(5deg) rotateY(5deg);
+  text-shadow: 3px 3px 15px rgba(0,0,0,0.7), 0 0 20px rgba(0,0,0,0.5);
+}
+
+.ssss p {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-top: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}

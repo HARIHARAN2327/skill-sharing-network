@@ -1,0 +1,128 @@
+/* ========================================
+   Page Layout & Container Styles
+======================================== */
+
+/* Use the same theme variables for consistency */
+:root {
+  --primary-color: #ff4d4d;
+  --background-color: #ffffff;
+  --page-bg-color: #f7f8fc; /* A light background for the whole page */
+  --text-color: #1c1c1e;
+  --secondary-text-color: #6c757d;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --border-radius-large: 20px;
+}
+
+/* Floating Membership CTA */
+.membership-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+}
+.membership-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #0b1220;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(96,165,250,0.25);
+}
+.membership-cta-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 34px rgba(96,165,250,0.35);
+}
+
+/* Main page wrapper for both /add-skill and /skills pages.
+  This creates the background and centers the content vertically and horizontally.
+*/
+.haran,
+.hrxn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  background-color: var(--page-bg-color);
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+/* The main content container that holds the title, paragraph, and card.
+  It controls the max-width and alignment.
+*/
+.haran-container,
+.hrxn-container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling for the page titles (h2) */
+.haran-container h2,
+.hrxn-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+/* Styling for the descriptive paragraphs (p) */
+.haran-container p,
+.hrxn-container p {
+  font-size: 1.1rem;
+  color: var(--secondary-text-color);
+  line-height: 1.6;
+  max-width: 650px; /* Keeps line length readable */
+  margin: 0 auto 2.5rem auto; /* Centers the paragraph and adds space below */
+}
+
+/* This card will wrap the SkillShareList component on the /skills page.
+  It provides a clean, contained look for the list of skills.
+*/
+.hrxn-card {
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-large);
+  padding: 30px;
+  box-shadow: 0 10px 40px var(--shadow-color);
+  text-align: left; /* Reset text-align for list content */
+}
+
+/* The .haran-card for the add-skill page doesn't need extra styling,
+  because the SkillShareForm component already has its own card styles
+  (background, shadow, etc.). This div acts as a simple wrapper.
+*/
+.haran-card {
+  /* No additional styles needed here */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+  .haran,
+  .hrxn {
+    padding: 30px 15px;
+    min-height: unset;
+  }
+
+  .haran-container h2,
+  .hrxn-container h2 {
+    font-size: 2rem;
+  }
+
+  .haran-container p,
+  .hrxn-container p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hrxn-card {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,130 @@
+/* ========================================
+   Modern SkillShareForm Styles
+======================================== */
+
+/* Define color palette and theme variables */
+:root {
+  --primary-color: #ff4d4d;
+  --primary-hover-color: #e63939;
+  --background-color: #ffffff;
+  --form-field-bg: #f7f8fc;
+  --border-color: #dde2ec;
+  --border-focus-color: #ff4d4d;
+  --text-color: #333;
+  --placeholder-color: #999;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --success-bg-color: rgba(40, 167, 69, 0.1);
+  --error-bg-color: rgba(220, 53, 69, 0.1);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --base-font-size: 16px;
+  --border-radius: 12px;
+}
+
+/* --- Main Form Container --- */
+.skill-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 35px;
+  background-color: var(--background-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Provides consistent spacing between form elements */
+}
+
+/* --- General Styles for All Form Fields --- */
+.skill-form input,
+.skill-form select,
+.skill-form textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--border-color);
+  background-color: var(--form-field-bg);
+  border-radius: var(--border-radius);
+  font-size: var(--base-font-size);
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-form input::placeholder,
+.skill-form textarea::placeholder {
+  color: var(--placeholder-color);
+}
+
+/* --- Focus State for Fields --- */
+.skill-form input:focus,
+.skill-form select:focus,
+.skill-form textarea:focus {
+  border-color: var(--border-focus-color);
+  box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.2);
+}
+
+/* --- Custom Dropdown Arrow for Select --- */
+.skill-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 1.2em;
+  cursor: pointer;
+}
+
+.skill-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* --- Submit Button --- */
+.skill-form button {
+  padding: 15px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: var(--border-radius);
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-form button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+.skill-form button:active {
+  transform: translateY(0);
+}
+
+/* --- Success and Error Messages --- */
+.skill-form p {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 5px;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
+.skill-form .success {
+  color: var(--success-color);
+  background-color: var(--success-bg-color);
+}
+
+.skill-form .error {
+  color: var(--error-color);
+  background-color: var(--error-bg-color);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+  .skill-form {
+    padding: 25px;
+    margin: 20px;
+  }
+}

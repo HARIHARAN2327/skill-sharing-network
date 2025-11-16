@@ -1,0 +1,159 @@
+/* ========================================
+   Upgraded Learning Sessions Styles
+======================================== */
+
+/* Using the established theme variables for consistency */
+:root {
+  --primary-color: #ff4d4d;
+  --primary-hover-color: #e63939;
+  --background-color: #ffffff;
+  --page-bg-color: #f7f8fc;
+  --card-bg-color: rgba(255, 255, 255, 0.98); /* Slightly more opaque for readability */
+  --border-color: #e0e0e0;
+  --text-color: #2c3e50;
+  --secondary-text-color: #7f8c8d;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --border-radius: 12px;
+}
+
+/* --- Main Learning Page Container --- */
+.learning-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: var(--page-bg-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px var(--shadow-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2.5rem;
+}
+
+/* --- Modern Category Tabs --- */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 3rem;
+}
+
+.category-tabs button {
+  padding: 10px 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 50px; /* Pill shape */
+  background-color: var(--background-color);
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.category-tabs button.active,
+.category-tabs button:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 77, 77, 0.3);
+}
+
+/* --- Learning Sessions Grid --- */
+.sessions-grid {
+  display: grid;
+  /* Updated minmax for slightly larger cards */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Upgraded Session Card --- */
+.session-card {
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.session-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.session-image {
+  width: 100%;
+  height: 160px; /* Slightly taller image */
+  object-fit: cover;
+  /* Added a subtle transition for the image */
+  transition: transform 0.4s ease;
+}
+
+.session-card:hover .session-image {
+  transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.session-info {
+  padding: 1.5rem;
+  text-align: left; /* Aligned left for better readability */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Ensures footer content aligns */
+}
+
+.session-info h3 {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.session-info p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--secondary-text-color);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* --- Themed Join Button --- */
+.join-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.join-btn:hover {
+  background-color: var(--primary-hover-color);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 77, 77, 0.4);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .learning-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .sessions-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}

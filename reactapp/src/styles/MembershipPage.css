@@ -1,0 +1,179 @@
+:root {
+    --bg: #0b0f14;
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.12);
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --primary: #60a5fa;
+    --primary-glow: rgba(96, 165, 250, 0.4);
+  }
+  
+  body.dark .membership-container,
+  .membership-container {
+    min-height: 100vh;
+    padding: 64px 20px;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(96, 165, 250, 0.04), transparent),
+                radial-gradient(1000px 500px at 90% 10%, rgba(34, 197, 94, 0.04), transparent),
+                var(--bg);
+    color: var(--text);
+  }
+  
+  .header-block {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .title {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--muted);
+    margin-top: 8px;
+  }
+  
+  .membership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  
+  .glass-card {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  }
+  
+  .membership-card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .card-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .plan-name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .price {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .price .unit {
+    color: var(--muted);
+    font-weight: 500;
+  }
+  
+  .features {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--muted);
+    display: grid;
+    gap: 6px;
+  }
+  
+  .btn-primary {
+    background: var(--primary);
+    color: #0b1220;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 8px 20px var(--primary-glow);
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+  
+  /* Modal */
+  .payment-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: grid;
+    place-items: center;
+    z-index: 1000;
+  }
+  .payment-modal {
+    width: min(92vw, 520px);
+    padding: 22px;
+    position: relative;
+  }
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px 8px;
+  }
+  .modal-title {
+    font-size: 22px;
+    font-weight: 800;
+  }
+  .modal-subtitle {
+    color: var(--muted);
+  }
+  .qr-section {
+    margin: 16px 0;
+    display: grid;
+    place-items: center;
+    gap: 8px;
+  }
+  .qr-wrapper {
+    background: rgba(255,255,255,0.04);
+    padding: 8px;
+    border-radius: 12px;
+  }
+  .qr-caption { color: var(--muted); }
+  
+  .instructions {
+    margin: 8px 0 16px 18px;
+    color: var(--muted);
+    display: grid;
+    gap: 4px;
+  }
+  .confirm-btn { width: 100%; }
+  
+  .upi-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 8px 0 12px 0;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.06);
+  }
+  
+  /* Toast */
+  .toast {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .toast-success { background: rgba(34,197,94,0.2); color: #e2fbe8; }
+  .toast-error { background: rgba(239,68,68,0.2); color: #fee2e2; }
+  

@@ -1,0 +1,112 @@
+.settings-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0d1b2a, #1b2a4d);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Grid layout */
+  .settings-grid {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Cards */
+  .settings-card {
+    flex: 1 1 45%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+  }
+  
+  .settings-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+  }
+  
+  /* Card headers */
+  .settings-card h3 {
+    color: #80d0ff;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form controls */
+  .settings-card .form-control {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+  }
+  
+  .settings-card .form-control:focus {
+    outline: none;
+    border-color: #00b4d8;
+    box-shadow: 0 0 10px rgba(0,180,216,0.4);
+    background: rgba(255,255,255,0.15);
+  }
+  
+  /* Buttons */
+  .settings-card .btn {
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .settings-card .btn-primary {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    border: none;
+    color: #fff;
+  }
+  
+  .settings-card .btn-primary:hover {
+    background: linear-gradient(90deg, #0077b6, #00b4d8);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  }
+  
+  .settings-card .btn-secondary {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #00b4d8;
+    color: #00b4d8;
+  }
+  
+  .settings-card .btn-secondary:hover {
+    background: rgba(0,180,216,0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* Alerts */
+  .alert {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .success-alert {
+    background-color: rgba(34,197,94,0.15);
+    color: #22c55e;
+  }
+  
+  .error-alert {
+    background-color: rgba(250,204,21,0.15);
+    color: #facc15;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .settings-card {
+      flex: 1 1 100%;
+    }
+  }
+  

@@ -1,0 +1,251 @@
+/* ================= Dashboard Page ================= */
+:root{
+  --dash-bg:#0b0f14;
+  --dash-surface:#0f1720;
+  --dash-surface-2:#141c26;
+  --dash-muted:#94a3b8;
+  --dash-primary:#ff6a00;
+  --dash-primary-2:#ff8333;
+  --dash-border:#1f2a36;
+  --dash-shadow:0 12px 30px rgba(0,0,0,0.35);
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  background: radial-gradient(900px 400px at 10% 10%, rgba(255,106,0,0.08), transparent),
+              radial-gradient(900px 400px at 90% 10%, rgba(255,131,51,0.06), transparent),
+              var(--dash-bg);
+  padding: 4rem 0;
+  font-family: 'Inter', sans-serif;
+  color: #e5e7eb;
+}
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--dash-surface);
+  border: 1px solid var(--dash-border);
+  border-radius: 20px;
+  box-shadow: var(--dash-shadow);
+}
+
+.dashboard-welcome {
+  text-align: center;
+}
+
+.dashboard-heading {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(90deg, var(--dash-primary), var(--dash-primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dashboard-subheading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+  text-align: center;
+  color: #1e3a8a;
+}
+
+.dashboard-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+  align-items: stretch;
+}
+
+/* Ensure MUI CardContent centers content and fills full height */
+.dashboard-card .MuiCardContent-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.dashboard-card {
+  background: linear-gradient(180deg, var(--dash-surface), var(--dash-surface-2));
+  border-radius: 20px;
+  padding: 1.5rem;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+  border: 1px solid var(--dash-border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
+  color: #e5e7eb;
+}
+
+/* Override MUI default white background on Card */
+.dashboard-card.MuiPaper-root {
+  background: linear-gradient(180deg, var(--dash-surface), var(--dash-surface-2)) !important;
+  background-color: var(--dash-surface) !important;
+  color: #e5e7eb;
+}
+.dashboard-card.MuiCard-root {
+  background: linear-gradient(180deg, var(--dash-surface), var(--dash-surface-2)) !important;
+  background-color: var(--dash-surface) !important;
+  color: #e5e7eb;
+}
+.dashboard-card .MuiCardContent-root {
+  background: transparent !important;
+  color: #e5e7eb;
+}
+.dashboard-card .MuiTypography-root { color: inherit !important; }
+
+.dashboard-card:hover { transform: translateY(-6px); box-shadow: 0 18px 38px rgba(0,0,0,0.35); }
+
+.dashboard-card-category {
+  font-size: 1.1rem;
+  color: var(--dash-primary);
+  font-weight: 700;
+}
+
+.dashboard-card-count {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 0.5rem;
+  color: #e5e7eb;
+}
+
+.dashboard-divider {
+  margin: 3rem 0 1.5rem;
+  height: 1px;
+  background: var(--dash-border);
+  border: none;
+}
+
+.dashboard-footer-text {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--dash-muted);
+  margin-top: 1rem;
+}
+
+/* Equal card grid and alignment */
+.dashboard-grid { align-items: stretch; }
+.dashboard-grid > * { height: 100%; }
+
+/* Font Awesome icons inside cards */
+.dashboard-card i.fa, .dashboard-card i.fas, .dashboard-card i.far, .dashboard-card i.fal, .dashboard-card i.fab {
+  font-size: 28px;
+  color: var(--dash-primary);
+  margin-bottom: 10px;
+}
+/* Optional circular icon badge */
+.dashboard-card .icon-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,106,0,0.12);
+  border: 1px solid rgba(255,106,0,0.35);
+  color: var(--dash-primary);
+  margin-bottom: 8px;
+}
+
+/* Dark theme for skills controls and table */
+.skills-header { color: var(--dash-muted); }
+.skills-toolbar .search-box input { background: #0e151d; border: 1px solid var(--dash-border); color: #e5e7eb; }
+.sort-controls { background: var(--dash-surface-2); border: 1px solid var(--dash-border); }
+.sort-controls label { color: var(--dash-muted); }
+.sort-controls select { background: #0e151d; border: 1px solid var(--dash-border); color: #e5e7eb; }
+.sort-controls .btn-order { background: linear-gradient(90deg, var(--dash-primary), var(--dash-primary-2)); box-shadow: 0 6px 14px rgba(255,106,0,0.35); }
+
+.skills-table-wrap { background: var(--dash-surface); border: 1px solid var(--dash-border); box-shadow: var(--dash-shadow); }
+.skills-table thead th { background: #111827; color: #e5e7eb; border-bottom: 1px solid var(--dash-border); }
+.skills-table tbody td { color: #e5e7eb; border-bottom: 1px solid #1a2430; }
+.skills-table tbody tr:hover { background: #1a2430; }
+.skills-table .chip { background: rgba(255,106,0,0.12); color: var(--dash-primary); border: 1px solid rgba(255,106,0,0.35); }
+.skills-table .muted { color: var(--dash-muted); }
+.skills-table .empty { color: var(--dash-muted); }
+
+.pager.bottom { background: transparent; }
+.pager button { background: var(--dash-primary); color: #0b0f14; box-shadow: 0 6px 14px rgba(255,106,0,0.35); }
+.pager .page-status { color: var(--dash-muted); }
+
+/* ========= Skills Table Section ========= */
+.skills-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.skills-toolbar { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.search-box input {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px 14px;
+  min-width: 280px;
+  outline: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+.sort-controls { display: inline-flex; align-items: center; gap: 8px; background: #f3f4f6; border: 1px solid #e5e7eb; border-radius: 999px; padding: 6px 10px; }
+.sort-controls label { color: #6b7280; font-size: 0.9rem; }
+.sort-controls select { border: 1px solid #e5e7eb; background: #fff; border-radius: 8px; padding: 6px 8px; font-weight: 600; }
+.sort-controls .btn-order { border: 0; background: linear-gradient(90deg, rgba(96,165,250,1) 0%, rgba(59,130,246,1) 100%); color: #fff; width: 34px; height: 34px; border-radius: 50%; font-weight: 800; box-shadow: 0 6px 14px rgba(59,130,246,0.35); cursor: pointer; }
+
+.skills-table-wrap { margin-top: 1rem; background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 24px rgba(0,0,0,0.06); }
+.skills-table { width: 100%; border-collapse: collapse; }
+.skills-table thead th { background: #f8fafc; color: #1f2937; text-align: left; padding: 14px 16px; font-weight: 800; font-size: 0.95rem; border-bottom: 1px solid #e5e7eb; }
+.skills-table tbody td { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+.skills-table tbody tr:hover { background: #fafbff; }
+.skills-table .chip { display: inline-block; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 0.85rem; }
+.skills-table .muted { color: #6b7280; }
+.skills-table .empty { text-align: center; color: #6b7280; padding: 28px 0; }
+
+.pager { display: flex; align-items: center; justify-content: center; gap: 12px; padding: 12px; }
+.pager.bottom { background: #fff; }
+.pager button { background: #111827; color: #fff; border: none; padding: 8px 14px; border-radius: 10px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 14px rgba(17,24,39,0.2); }
+.pager button:disabled { opacity: 0.5; cursor: not-allowed; }
+.pager .page-status { color: #6b7280; font-weight: 700; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .dashboard-heading {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-subheading {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-card-count {
+    font-size: 1.35rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-page {
+    padding: 3rem 1rem;
+  }
+
+  .dashboard-heading {
+    font-size: 2rem;
+  }
+
+  .dashboard-subheading {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-card {
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+}

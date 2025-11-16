@@ -1,0 +1,253 @@
+
+.brand h1:hover {
+  transform: scale(1.04);
+  color: #d93e2b; /* bright accent on hover */
+}
+
+:root {
+  --header-bg: rgba(25, 25, 30, 0.9); /* Dark and translucent, matching footer */
+  --accent-color: #ff4c3b; /* Primary accent color */
+  --text-light: #e0e0e0; /* Light text for dark background */
+  --text-primary: #fff; /* Pure white for titles */
+  --nav-hover-bg: rgba(255, 255, 255, 0.1);
+  --button-hover-bg: #d93e2b;
+  --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Main Header Bar --- */
+.custom-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  /* Footer-inspired glass effect */
+  background-color: var(--header-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-dark);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Brand Section --- */
+.brand {
+    text-decoration: none;
+    color: inherit;
+}
+.brand-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0;
+  letter-spacing: -0.5px;
+}
+.brand-tagline {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  opacity: 0.7;
+  margin-top: 5px;
+  line-height: 1;
+}
+
+/* --- Center Navigation --- */
+.header-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.header-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 30px; /* Pill shape */
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: all 0.2s ease-in-out;
+}
+
+.header-nav .nav-link:hover {
+  background-color: var(--nav-hover-bg);
+  color: var(--text-primary);
+}
+
+.header-nav .nav-link.active {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* --- Right Actions & Buttons --- */
+.header-right-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+/* Login/Outline Button */
+.btn-login {
+  background-color: transparent;
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+.btn-login:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 4px 10px rgba(255, 76, 59, 0.3);
+}
+
+/* Learning Session CTA Button */
+.btn-sessions {
+  background-color: var(--accent-color);
+  color: #000;
+  padding: 12px 25px; 
+  box-shadow: 0 6px 20px rgba(255, 76, 59, 0.4);
+}
+.btn-sessions:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--text-primary);
+  box-shadow: 0 8px 25px rgba(255, 76, 59, 0.6);
+}
+
+/* Mobile/User Menu Button */
+.menu-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Dropdown Menu --- */
+.dropdown-menu-custom {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin-top: 15px;
+  background-color: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: var(--shadow-dark);
+  list-style: none; /* Remove default list bullets */
+}
+
+.dropdown-item-custom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--text-light);
+  text-decoration: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: left;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.dropdown-item-custom:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+}
+
+.dropdown-item-custom.text-danger {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.dropdown-item-custom.text-danger:hover {
+    background-color: rgba(255, 76, 59, 0.1);
+}
+
+.dropdown-divider {
+  height: 1px;
+  margin: 0.5rem 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 0;
+}
+
+/* --- Responsive Layout --- */
+
+/* Hide main nav on tablet/mobile */
+@media (max-width: 992px) {
+  .header-nav {
+    display: none;
+  }
+}
+
+/* Adjust button visibility and size on small screens */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0.75rem 1rem;
+  }
+  .brand-title {
+    font-size: 1.4rem;
+  }
+  .brand-tagline {
+    display: none;
+  }
+  .btn-sessions span {
+      display: none; /* Hide text, keep only icon */
+  }
+  .btn-sessions {
+    padding: 10px;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  .btn-login span {
+      display: none;
+  }
+  .btn-login {
+    padding: 10px;
+    width: 42px;
+    height: 42px;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 50%;
+  }
+  /* Show menu button on all screens 768px and below */
+  .menu-btn {
+      display: flex;
+  }
+}
