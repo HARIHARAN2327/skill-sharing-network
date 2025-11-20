@@ -14,11 +14,13 @@ function SkillShareForm({ onAdd, editId, setError }) {
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
 
+  const ROOT_BASE =
+    (process.env.REACT_APP_API_BASE || "https://skill-network-backend-ecgi.onrender.com").replace(/\/+$/, "");
+  const SKILLSHARE_BASE = `${ROOT_BASE}/api/skillshares`;
+
   // Fetch skill by ID for editing
   const getSkillShareById = async (id) => {
-    return await axios.get(
-      `https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io/api/skillshares/${id}`
-    );
+    return await axios.get(`${SKILLSHARE_BASE}/${id}`);
   };
 
   const loadSkill = useCallback(async (id) => {
@@ -63,10 +65,7 @@ function SkillShareForm({ onAdd, editId, setError }) {
     if (!validateForm()) return;
 
     try {
-      const res = await axios.post(
-        "https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io/api/skillshares/addSkillShare",
-        form
-      );
+      const res = await axios.post(`${SKILLSHARE_BASE}/addSkillShare`, form);
 
       // Pass the actual saved skill to parent
       onAdd && onAdd(res.data);

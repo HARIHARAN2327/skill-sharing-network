@@ -1,7 +1,9 @@
 import axios from "axios";
 
-// Local backend base URL
-const BASE_URL = "http://localhost:8080/api/skillshares";
+// Backend base URL (configurable via REACT_APP_API_BASE)
+const ROOT_BASE =
+  (process.env.REACT_APP_API_BASE || "https://skill-network-backend-ecgi.onrender.com").replace(/\/+$/, "");
+const BASE_URL = `${ROOT_BASE}/api/skillshares`;
 
 export const addSkillShare = (skillShare) =>
   axios.post(`${BASE_URL}/addSkillShare`, skillShare);

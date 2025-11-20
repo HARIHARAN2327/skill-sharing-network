@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_BASE =
   process.env.REACT_APP_API_BASE ||
-  "https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io";
+  "https://skill-network-backend-ecgi.onrender.com";
 
 const PAY_BASE = `${API_BASE.replace(/\/$/, "")}/api/payments`;
 

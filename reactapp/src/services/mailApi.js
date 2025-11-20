@@ -1,7 +1,9 @@
 // services/mailApi.js
 import axios from "axios";
 
-const API_BASE = "https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io/api/password";
+const ROOT_BASE =
+  (process.env.REACT_APP_API_BASE || "https://skill-network-backend-ecgi.onrender.com").replace(/\/+$/, "");
+const API_BASE = `${ROOT_BASE}/api/password`;
 
 export const forgotPassword = (email) => {
   return axios.post(`${API_BASE}/forgot?email=${encodeURIComponent(email)}`);

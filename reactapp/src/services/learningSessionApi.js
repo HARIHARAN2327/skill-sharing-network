@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API_BASE =
-  "https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io/api/learningSessions";
+  `${(process.env.REACT_APP_API_BASE || "https://skill-network-backend-ecgi.onrender.com").replace(/\/+$/, "")}/api/learningSessions`;
 
 // ===========================
 // BACKEND FETCH FUNCTIONS

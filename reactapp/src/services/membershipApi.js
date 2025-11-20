@@ -4,7 +4,7 @@ import axios from "axios";
 // Follow existing pattern used in userApi.js
 const API_BASE =
   process.env.REACT_APP_API_BASE ||
-  "https://8080-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io";
+  "https://skill-network-backend-ecgi.onrender.com";
 
 const MEMBERSHIP_BASE = `${API_BASE}/api/memberships`;
 

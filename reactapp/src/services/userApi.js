@@ -1,7 +1,8 @@
 import axios from "axios";
 
-// Base URL construction (local Spring Boot backend)
-const DEFAULT_API_BASE = "http://localhost:8080";
+// Base URL construction (backend API base, configurable via env)
+const DEFAULT_API_BASE =
+  process.env.REACT_APP_API_BASE || "https://skill-network-backend-ecgi.onrender.com";
 const ROOT_BASE = (DEFAULT_API_BASE || "").replace(/^"|"$/g, "").replace(/\/+$/, "");
 const API_ROOT = ROOT_BASE.replace(/\/+$/, "").endsWith("/api") ? ROOT_BASE : `${ROOT_BASE}/api`;
 const BASE_URL = `${API_ROOT}/users`;

@@ -102,8 +102,8 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
         cfg.setAllowedOrigins(List.of(
-            "https://8081-afbbcbdcdbeddeaeaafeabcfedbbfadbaeaab.premiumproject.examly.io",
-            "http://localhost:3000"
+            "http://localhost:3000",
+            "https://skill-sharing-network01.web.app"
         ));
         cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         cfg.setAllowedHeaders(List.of("*"));
